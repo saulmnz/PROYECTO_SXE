@@ -110,14 +110,14 @@ class Producto(models.Model):
 
 > **Se realizó la instalación y orquestación de la suite de aplicaciones necesaria para el flujo empresarial:**
 
-**Website & eCommerce:** Gestión de interfaz comercial y catálogo digital.
+**Website & eCommerce: Gestión de interfaz comercial y catálogo digital.**
 
-**Inventario & Compras:** Control de stock, reglas de abastecimiento y flujo de suministros.
+**Inventario & Compras:Control de stock, reglas de abastecimiento y flujo de suministros.**
 
 
-**Manufacturing (MRP):** Motor de producción para el ensamblaje de equipos a medida. (PC BESTIAAA)
+**Manufacturing (MRP):Motor de producción para el ensamblaje de equipos a medida. (PC BESTIAAA)**
 
-**Facturación y Contabilidad**: Registro contable de las operaciones, impuestos y tesorería.
+**Facturación y Contabilidad: Registro contable de las operaciones, impuestos y tesorería.**
 
 <img width="907" height="354" alt="image" src="https://github.com/user-attachments/assets/7a416bee-71e8-46aa-86df-f344edff3ff3" />
 
@@ -126,7 +126,7 @@ class Producto(models.Model):
 ## 4. GESTIÓN DE PROYECTO 🟪
 > **Se definieron los backlogs iniciales para priorizar las tareas de desarrollo y configuración :**
 
-Con la intención de tener una **implementación ordenada y limpia** de los requisitos funcionales, este módulo se ha estructurado siguiendo el patrón de diseño oficial de Odoo.
+**Con la intención de tener una implementación ordenada y limpia de los requisitos funcionales, este módulo se ha estructurado siguiendo el patrón de diseño oficial de Odoo.**
 
 <img width="1550" height="768" alt="image" src="https://github.com/user-attachments/assets/0343e6b8-4ee7-4164-99c8-b01f7b1126e6" />
 
@@ -135,50 +135,52 @@ Con la intención de tener una **implementación ordenada y limpia** de los requ
 
 ## 5. INVENTARIO Y DATOS MAESTROS
 > **Se definieron categorías para organizar el flujo de materiales y la valoración de inventario:**
-* **Componentes:** Materias primas para el proceso de ensamblaje.
+* **Componentes: Materias primas para el proceso de ensamblaje.**
 <img width="1136" height="162" alt="image" src="https://github.com/user-attachments/assets/c5b00a27-2851-40a8-8897-4f0b2765f7e2" />
 
-* **PCs Ensamblados:** Productos terminados destinados a la venta final.
+* **PCs Ensamblados:Productos terminados destinados a la venta final.**
   
 <img width="959" height="265" alt="CATEGORIA" src="https://github.com/user-attachments/assets/282a31b1-410f-40ef-ba64-1b798750a55c" />
 
 > **Se crearon los siguientes requisitos a validar:**
-* **Materias Primas:** Procesador (CPU), Tarjeta Gráfica (GPU) y Torre.
+* **Materias Primas: Procesador (CPU), Tarjeta Gráfica (GPU) y Torre.**
  
 <img width="959" height="388" alt="PRODUCTO" src="https://github.com/user-attachments/assets/0f2614ee-9f76-495c-984d-31022c122e3a" />
 
 <img width="959" height="332" alt="INFO MODULO VIGOTECH PRODUCTO" src="https://github.com/user-attachments/assets/783e5de6-7f29-48d9-8208-9e815e218af5" />
 
 
-* **Producto Terminado:** "PC Gaming Bestia", configurado con ruta de fabricación.
-  <img width="1288" height="568" alt="image" src="https://github.com/user-attachments/assets/71ec14be-17ea-4c82-9e9a-22b9904e5646" />
+* **Producto Terminado:"PC Gaming Bestia", configurado con ruta de fabricación.**
+<img width="1302" height="500" alt="image" src="https://github.com/user-attachments/assets/d1e7d16b-ca5c-4f53-af18-76d31cc25cf1" />
+
 
   
 
 ## 6. COMPROBACIÓN CICLO DE COMPRAS 🟪
 > **Se ejecutó una compra completa para testear el desarrollo:**
-**Registro de Proveedor:** Alta de ficha de partner con condiciones de pago.
+**Registro de Proveedor:Alta de ficha de partner con condiciones de pago.**
 <img width="959" height="364" alt="PROVEEDOR" src="https://github.com/user-attachments/assets/7c6df2d4-d70d-4002-bd90-673806e8002b" />
 
-**Solicitud de Presupuesto (RFQ):** Creación de pedido para componentes (CPU, GPU, Torre).
-**Recepción de Mercancía:** Validación del albarán de entrada y cambios en el stock.
+**Solicitud de Presupuesto (RFQ):Creación de pedido para componentes (CPU, GPU, Torre).**
+**Recepción de Mercancía: Validación del albarán de entrada y cambios en el stock.**
  <img width="956" height="245" alt="STOCK DESPUES DE PEDIDO" src="https://github.com/user-attachments/assets/6764147e-3fde-48e6-bbb0-9266526ed03f" />
-**Factura de Proveedor** Generación, validación y registro del pago de la factura de compra, cerrando el ciclo de deuda con el proveedor.
+**Factura de Proveedor Generación, validación y registro del pago de la factura de compra, cerrando el ciclo de deuda con el proveedor.**
+<img width="748" height="695" alt="image" src="https://github.com/user-attachments/assets/9fd7363c-0d88-4121-b90f-99cf8f168b1c" />
 
 ## 7. Ingeniería de Producto y Fabricación (MRP)
 > **Se configuró la lógica de producción para automatizar el ensamblaje bajo demanda:**
-* **Listas de Materiales (BoM):** Definición de la estructura del producto "PC Gaming Bestia", con sus componentes (CPU, GPU, Torre) como necesarios.
-* **Orden de Producción:** Ejecución de pruebas de fabricación donde el sistema descuenta automáticamente el stock de componentes y realiza el alta del producto terminado en el inventario.
+* **Listas de Materiales (BoM):Definición de la estructura del producto "PC Gaming Bestia", con sus componentes (CPU, GPU, Torre) como necesarios.**
+* **Orden de Producción:Ejecución de pruebas de fabricación donde el sistema descuenta automáticamente el stock de componentes y realiza el alta del producto terminado en el inventario.**
 <img width="476" height="454" alt="ORDEN DE FABRICACION" src="https://github.com/user-attachments/assets/ec80064f-b69d-4162-a094-3fd12e51f7cf" />
 
 
 ## 8. FLUJO E ECOMMERCE 🟪
-Implementación del ciclo completo de venta desde el escaparate digital hasta el cobro:
-* **Publicación Web:** Despliegue del producto en el *eCommerce* de Odoo, configurando estados de publicación y banners.
+**Implementación del ciclo completo de venta desde el escaparate digital hasta el cobro:**
+* **Publicación Web:Despliegue del producto en el *eCommerce* de Odoo, configurando estados de publicación y banners.**
   
 <img width="470" height="242" alt="ORDENADOR PUBLICADO EN TIENDA" src="https://github.com/user-attachments/assets/8198c3f0-525e-40d3-b04b-bdaac63ab075" />
 
-* **Gestión de Pedidos (SO):** Trazabilidad completa desde la confirmación del pedido en la web hasta el backend administrativo.
+* **Gestión de Pedidos (SO):Trazabilidad completa desde la confirmación del pedido en la web hasta el backend administrativo.**
 
 <img width="479" height="394" alt="COMPRO ORDENADOR" src="https://github.com/user-attachments/assets/9fde01e7-e619-4b92-ae9a-e16e32f505ff" />
 
@@ -195,31 +197,33 @@ Implementación del ciclo completo de venta desde el escaparate digital hasta el
 
 
 
-* **Logística de Salida:** Validación del Albarán de Entrega (*Delivery Order*), descontando el stock final del almacén.
+* **Logística de Salida: Validación del Albarán de Entrega (*Delivery Order*), descontando el stock final del almacén.**
 
 <img width="475" height="314" alt="ENTREGA PRODUCTO VALIDAD" src="https://github.com/user-attachments/assets/44d03594-1183-4308-92b3-2b550b2def49" />
 
 
 ## 9. GESTIÓN Y CIERRE CONTABLE 🟪
-Configuración de la capa contable para asegurar la integridad de los datos financieros:
-* **Datos Corporativos:** Personalización de la compañía para la emisión de documentos.
-* **Facturación de Cliente:** Emisión y validación de facturas desde los pedidos de venta.
-* **Conciliación de Pagos:** Registro de los flujos de caja y cambio de estado a **"PAGADO"** mediante los diarios de banco/efectivo.
+**Configuración de la capa contable para asegurar la integridad de los datos financieros:**
+* **Datos Corporativos: Personalización de la compañía para la emisión de documentos.**
+* **Facturación de Cliente: Emisión y validación de facturas desde los pedidos de venta.**
+* **Conciliación de Pagos:Registro de los flujos de caja y cambio de estado a PAGADO mediante los diarios de banco/efectivo.**
 
 ## 10. INFORME 🟪
 > **Se ha desarrollado un informe que mmuestre todas las características creadas en los productos de Vigotech**
 
 
-Mediante los campos creados anteriormenete se desarrolla un **informe que contiene toda la información** lista para mostrarle el producto al cliente. Se accede a este informe
-propio mediante el icono del engranaje al lado del producto.
+**Mediante los campos creados anteriormenete se desarrolla un informe que contiene toda la información lista para mostrarle el producto al cliente. Se accede a este informe
+propio mediante el icono del engranaje al lado del producto.**
 
 <img width="769" height="319" alt="image" src="https://github.com/user-attachments/assets/3af363dc-e2ca-4ca3-b6ea-4f5d2899951f" />
+<img width="455" height="627" alt="image" src="https://github.com/user-attachments/assets/9640ddba-cad0-4137-819b-0188be40e631" />
+
 
 
 ## 11. INTEGRACIÓN Y AUTOMATIZACIÓN EXTERNA (BONUSSS) 🟪
 > **A mayores, se diseño un desarrollo que permite la conectividad mediante API externa de Odoo**
-* **Script XML-RPC:** Desarrollo de un script en **Python** que se conecta al ERP mediante protocolo XML-RPC.
-* **Funcionalidad:** El script audita la base de datos remotamente para generar alertas de **"Stock Crítico"**, identificando productos por debajo del umbral de seguridad sin necesidad de acceder a la interfaz web.
+* **Script XML-RPC: Desarrollo de un script en **Python** que se conecta al ERP mediante protocolo XML-RPC.**
+* **Funcionalidad:El script audita la base de datos remotamente para generar alertas de Stock Crítico, identificando productos por debajo del umbral de seguridad sin necesidad de acceder a la interfaz web.**
 
 ```Python
 
