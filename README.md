@@ -242,7 +242,7 @@ class Producto(models.Model):
 
 <img width="474" height="393" alt="PEDIDO DEL ORDENADOR NO PAGADO" src="https://github.com/user-attachments/assets/6aa71754-938d-4ce0-8520-acfcd7036f58" />
 
-<img width="959" height="175" alt="image" src="https://github.com/user-attachments/assets/dda70650-d1c3-41a9-9547-0872e3939449" />
+<img width="344" height="425" alt="image" src="https://github.com/user-attachments/assets/ad90d03d-19d9-454b-af28-7090abfd0f53" />
 
 ---
 
@@ -250,7 +250,7 @@ class Producto(models.Model):
 
 <img width="475" height="314" alt="ENTREGA PRODUCTO VALIDAD" src="https://github.com/user-attachments/assets/44d03594-1183-4308-92b3-2b550b2def49" />
 
-<img width="247" height="350" alt="image" src="https://github.com/user-attachments/assets/0c59906a-3faf-4f0d-b6b0-686a97e920f6" />
+<img width="247" height="314" alt="image" src="https://github.com/user-attachments/assets/0c59906a-3faf-4f0d-b6b0-686a97e920f6" />
 
 
 ## 9. GESTIÓN Y CIERRE CONTABLE 🟪
@@ -263,6 +263,8 @@ class Producto(models.Model):
 * **Conciliación de Pagos: Registro de los flujos de caja y cambio de estado a PAGADO mediante los diarios de banco/efectivo.**
   
 <img width="958" height="368" alt="image" src="https://github.com/user-attachments/assets/c1f454f3-6862-4ec3-a7ab-75b548e8fac4" />
+<img width="244" height="350" alt="image" src="https://github.com/user-attachments/assets/27664697-486b-4c07-aee3-ff0da9cc99ed" />
+
 
 ## 10. INFORME 🟪
 
