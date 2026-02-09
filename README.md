@@ -147,14 +147,19 @@ class Producto(models.Model):
 ## 6. COMPROBACIÓN CICLO DE COMPRAS 🟪
 > **Se ejecutó una compra completa para testear el desarrollo:**
 1. **Registro de Proveedor:** Alta de ficha de partner con condiciones de pago.
+<img width="959" height="364" alt="PROVEEDOR" src="https://github.com/user-attachments/assets/7c6df2d4-d70d-4002-bd90-673806e8002b" />
+
 2. **Solicitud de Presupuesto (RFQ):** Creación de pedido para componentes (CPU, GPU, Torre).
 3. **Recepción de Mercancía:** Validación del albarán de entrada y cambios en el stock.
+ <img width="956" height="245" alt="STOCK DESPUES DE PEDIDO" src="https://github.com/user-attachments/assets/6764147e-3fde-48e6-bbb0-9266526ed03f" />
 4. **Factura de Proveedor:** Generación, validación y **registro del pago** de la factura de compra, cerrando el ciclo de deuda con el proveedor.
 
 ## 7. Ingeniería de Producto y Fabricación (MRP)
 Se configuró la lógica de producción para automatizar el ensamblaje bajo demanda:
 * **Listas de Materiales (BoM):** Definición de la estructura del producto "PC Gaming Bestia", con sus componentes (CPU, GPU, Torre) como necesarios.
 * **Orden de Producción:** Ejecución de pruebas de fabricación donde el sistema descuenta automáticamente el stock de componentes y realiza el alta del producto terminado en el inventario.
+<img width="476" height="454" alt="ORDEN DE FABRICACION" src="https://github.com/user-attachments/assets/ec80064f-b69d-4162-a094-3fd12e51f7cf" />
+
 
 ## 8. FLUJO E ECOMMERCE 🟪
 Implementación del ciclo completo de venta desde el escaparate digital hasta el cobro:
@@ -184,15 +189,78 @@ Implementación del ciclo completo de venta desde el escaparate digital hasta el
 <img width="475" height="314" alt="ENTREGA PRODUCTO VALIDAD" src="https://github.com/user-attachments/assets/44d03594-1183-4308-92b3-2b550b2def49" />
 
 
-## 9. Gestión Financiera y Cierre Contable
+## 9. GESTIÓN Y CIERRE CONTABLE 🟪
 Configuración de la capa contable para asegurar la integridad de los datos financieros:
-* **Datos Corporativos:** Personalización de la compañía (Logo, Dirección fiscal en Vigo) para la emisión formal de documentos.
+* **Datos Corporativos:** Personalización de la compañía para la emisión de documentos.
 * **Facturación de Cliente:** Emisión y validación de facturas desde los pedidos de venta.
-* **Conciliación de Pagos:** Registro de los flujos de caja y cambio de estado a **"PAGADO"** (Ribbon verde) mediante los diarios de banco/efectivo, resolviendo conflictos de cuentas de ingresos predeterminadas.
+* **Conciliación de Pagos:** Registro de los flujos de caja y cambio de estado a **"PAGADO"** mediante los diarios de banco/efectivo.
 
-## 10. INTEGRACIÓN Y AUTOMATIZACIÓN EXTERNA (BONUSSS)
+## 10. INFORME 🟪
+> **Se ha desarrollado un informe que mmuestre todas las características creadas en los productos de Vigotech**
+
+Mediante los campos crados anteriormenete se desarrolla un informe que contiene toda la información lsita para mostrarle el producto al cliente. Se accde a este informe
+propio mediante el icono del engranaje al lado del producto.
+<img width="769" height="319" alt="image" src="https://github.com/user-attachments/assets/3af363dc-e2ca-4ca3-b6ea-4f5d2899951f" />
+
+
+## 11. INTEGRACIÓN Y AUTOMATIZACIÓN EXTERNA (BONUSSS) 🟪
 > **A mayores, se diseño un desarrollo que permite la conectividad mediante API externa de Odoo**
 * **Script XML-RPC:** Desarrollo de un script en **Python** que se conecta al ERP mediante protocolo XML-RPC.
+```Python
+
+import xmlrpc.client
+
+# CONEXIÓN
+url = 'http://localhost:8069'
+db = 'VIGO_TECH_1'
+username = 'admin@example.com'
+password = 'admin'
+
+common = xmlrpc.client.ServerProxy('{}/xmlrpc/2/common'.format(url))
+
+# INTENTAMOS AUTENTICAR
+try:
+    uid = common.authenticate(db, username, password, {})
+    if uid:
+        print(f"CONECTAASTE: {uid}")
+    else:
+        print("ERROOOR, NO CONECTASTE.")
+        exit()
+except Exception as e:
+    print(f"Error de conexión: {e}")
+    exit()
+
+models = xmlrpc.client.ServerProxy('{}/xmlrpc/2/object'.format(url))
+
+#LA CONSULTA
+print("BUSCANDO PRODUCTOS CON STOCK CRÍTICO (<10 ud)")
+
+ids_productos = models.execute_kw(db, uid, password,
+    'product.product', 'search',
+    [[
+        ['qty_available', '<', 10],
+        ['qty_available', '>', -100]
+    ]])
+
+if ids_productos:
+    # LEEMOS NOMBRES Y CANTIDADES
+    productos = models.execute_kw(db, uid, password,
+        'product.product', 'read',
+        [ids_productos],
+        {'fields': ['name', 'qty_available', 'standard_price']})
+
+    for prod in productos:
+        nombre = prod['name']
+        stock = prod['qty_available']
+        coste = prod['standard_price']
+        print(f"ALERTA: {nombre} | STOCK: {stock} | COSTE: {coste}€")
+else:
+    print("TODO BIEN, NO HAY PRODUCTOS EN STOCK CRÍTICO.")
+
+
+
+```
+
 * **Funcionalidad:** El script audita la base de datos remotamente para generar alertas de **"Stock Crítico"**, identificando productos por debajo del umbral de seguridad sin necesidad de acceder a la interfaz web.
 
 ---
