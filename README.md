@@ -1,6 +1,7 @@
 # PROYECTO SXE 💜💜
 
 ***AUTORES: Saúl Álvarez, Adrián Miguez, Sofía Otero***
+
 ***MÓDULO: SISTEMAS DE XESTIÓN EMPRESARIAL***
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d7a82761-ad58-4c8e-baff-d130a5c27594" />
