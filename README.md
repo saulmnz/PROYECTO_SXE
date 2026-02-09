@@ -273,9 +273,7 @@ class Producto(models.Model):
 ## 10. INFORME 🟪
 
 >[!NOTE]
-> **Se ha desarrollado un informe que mmuestre todas las características creadas en los productos de Vigotech**
-
-**Mediante los campos creados anteriormenete se desarrolla un informe que contiene toda la información lista para mostrarle el producto al cliente. Se accede a este informe
+> **Se ha desarrollado un informe que muestre todas las características creadas en los productos de Vigotech. Mediante los campos creados anteriormenete se desarrolla un informe que contiene toda la información lista para mostrarle el producto al cliente. Se accede a este informe
 propio mediante el icono del engranaje al lado del producto.**
 
 <img width="769" height="319" alt="image" src="https://github.com/user-attachments/assets/3af363dc-e2ca-4ca3-b6ea-4f5d2899951f" />
@@ -346,6 +344,6 @@ else:
 
 ```
 
-<img width="495" height="175" alt="image" src="https://github.com/user-attachments/assets/86872820-c38a-4288-a27d-07c028d327cc" />
+<img width="695" height="375" alt="image" src="https://github.com/user-attachments/assets/86872820-c38a-4288-a27d-07c028d327cc" />
 
 ---
