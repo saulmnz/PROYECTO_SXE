@@ -136,6 +136,8 @@ Con la intención de tener una **implementación ordenada y limpia** de los requ
 ## 5. INVENTARIO Y DATOS MAESTROS
 > **Se definieron categorías para organizar el flujo de materiales y la valoración de inventario:**
 * **Componentes:** Materias primas para el proceso de ensamblaje.
+<img width="1136" height="162" alt="image" src="https://github.com/user-attachments/assets/c5b00a27-2851-40a8-8897-4f0b2765f7e2" />
+
 * **PCs Ensamblados:** Productos terminados destinados a la venta final.
   
 <img width="959" height="265" alt="CATEGORIA" src="https://github.com/user-attachments/assets/282a31b1-410f-40ef-ba64-1b798750a55c" />
@@ -149,6 +151,8 @@ Con la intención de tener una **implementación ordenada y limpia** de los requ
 
 
 * **Producto Terminado:** "PC Gaming Bestia", configurado con ruta de fabricación.
+  <img width="1288" height="568" alt="image" src="https://github.com/user-attachments/assets/71ec14be-17ea-4c82-9e9a-22b9904e5646" />
+
   
 
 ## 6. COMPROBACIÓN CICLO DE COMPRAS 🟪
