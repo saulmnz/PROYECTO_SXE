@@ -13,8 +13,11 @@
 >[!NOTE]
 >***El objetivo de este proyecto ha sido la transformación digital de la empresa "Vigo-Tech Solutions", migrando su modelo de negocio físico a una arquitectura online mediante la implantación del ERP Odoo. El proyecto abarca desde la configuración de infraestructura hasta la automatización de procesos de negocio complejos (MRP, eCommerce y Contabilidad).***
 
+---
+
 ## 2. CONFIGURACIÓN DE INFRAESTRUCTURA 🟪
 
+>[!NOTE]
 >**El proyecto inició con el establecimiento de un entorno de desarrollo robusto y escalable:**
 
 - **Contenerización: Despliegue de la arquitectura mediante Docker Compose.**
@@ -69,7 +72,10 @@ volumes:
   pgadmin_data:
 ```
 
+---
+
 - **Módulo: Creación de un módulo personalizado de Odoo (`scaffold`) para alojar las personalizaciones y datos maestros.**
+  
 - **Herencia de Modelos: Se aplicó herencia técnica sobre el modelo `product.template` para extender las funcionalidades nativas del catálogo de productos y adaptarlas al sector hardware de la empresa.**
 
 ```Python
@@ -104,26 +110,30 @@ class Producto(models.Model):
     )
 ```
 
+---
+
 
 
 ## 3. ECOSISTEMA DE MÓDULOS 🟪
 
+>[!NOTE]
 > **Se realizó la instalación y orquestación de la suite de aplicaciones necesaria para el flujo empresarial:**
 
-**Website & eCommerce: Gestión de interfaz comercial y catálogo digital.**
+- **Website & eCommerce: Gestión de interfaz comercial y catálogo digital.**
 
-**Inventario & Compras:Control de stock, reglas de abastecimiento y flujo de suministros.**
+- **Inventario & Compras:Control de stock, reglas de abastecimiento y flujo de suministros.**
 
+- **Manufacturing (MRP):Motor de producción para el ensamblaje de equipos a medida. (PC BESTIAAA)**
 
-**Manufacturing (MRP):Motor de producción para el ensamblaje de equipos a medida. (PC BESTIAAA)**
-
-**Facturación y Contabilidad: Registro contable de las operaciones, impuestos y tesorería.**
+- **Facturación y Contabilidad: Registro contable de las operaciones, impuestos y tesorería.**
 
 <img width="907" height="354" alt="image" src="https://github.com/user-attachments/assets/7a416bee-71e8-46aa-86df-f344edff3ff3" />
 
-
+---
 
 ## 4. GESTIÓN DE PROYECTO 🟪
+
+>[!NOTE]
 > **Se definieron los backlogs iniciales para priorizar las tareas de desarrollo y configuración :**
 
 **Con la intención de tener una implementación ordenada y limpia de los requisitos funcionales, este módulo se ha estructurado siguiendo el patrón de diseño oficial de Odoo.**
@@ -132,53 +142,90 @@ class Producto(models.Model):
 
 <img width="1086" height="820" alt="image" src="https://github.com/user-attachments/assets/72f6feb6-96b1-482f-a3e6-d8f0b7df6d5d" />
 
+---
 
 ## 5. INVENTARIO Y DATOS MAESTROS
+
+>[!NOTE]
 > **Se definieron categorías para organizar el flujo de materiales y la valoración de inventario:**
 * **Componentes: Materias primas para el proceso de ensamblaje.**
 <img width="1136" height="162" alt="image" src="https://github.com/user-attachments/assets/c5b00a27-2851-40a8-8897-4f0b2765f7e2" />
 
-* **PCs Ensamblados:Productos terminados destinados a la venta final.**
+* **PCs Ensamblados: Productos terminados destinados a la venta final.**
   
 <img width="959" height="265" alt="CATEGORIA" src="https://github.com/user-attachments/assets/282a31b1-410f-40ef-ba64-1b798750a55c" />
 
+<img width="959" height="265" alt="image" src="https://github.com/user-attachments/assets/84f7902c-7c06-441b-95ca-ecd51ce3a695" />
+
+---
+
+>[!CAUTION]
 > **Se crearon los siguientes requisitos a validar:**
+
 * **Materias Primas: Procesador (CPU), Tarjeta Gráfica (GPU) y Torre.**
  
 <img width="959" height="388" alt="PRODUCTO" src="https://github.com/user-attachments/assets/0f2614ee-9f76-495c-984d-31022c122e3a" />
 
 <img width="959" height="332" alt="INFO MODULO VIGOTECH PRODUCTO" src="https://github.com/user-attachments/assets/783e5de6-7f29-48d9-8208-9e815e218af5" />
 
+<img width="959" height="350" alt="image" src="https://github.com/user-attachments/assets/404cedbe-03d9-445d-b02a-6b86db46b272" />
 
-* **Producto Terminado:"PC Gaming Bestia", configurado con ruta de fabricación.**
+---
+
+* **Producto Terminado: "PC Gaming Bestia", configurado con ruta de fabricación.**
 <img width="1302" height="500" alt="image" src="https://github.com/user-attachments/assets/d1e7d16b-ca5c-4f53-af18-76d31cc25cf1" />
 
 
+---
   
 
 ## 6. COMPROBACIÓN CICLO DE COMPRAS 🟪
+
+>[!NOTE]
 > **Se ejecutó una compra completa para testear el desarrollo:**
-**Registro de Proveedor:Alta de ficha de partner con condiciones de pago.**
+
+- **Registro de Proveedor: Alta de ficha de partner con condiciones de pago.**
 <img width="959" height="364" alt="PROVEEDOR" src="https://github.com/user-attachments/assets/7c6df2d4-d70d-4002-bd90-673806e8002b" />
 
-**Solicitud de Presupuesto (RFQ):Creación de pedido para componentes (CPU, GPU, Torre).**
+---
+
+- **Solicitud de Presupuesto (RFQ): Creación de pedido para componentes (CPU, GPU, Torre).**
 **Recepción de Mercancía: Validación del albarán de entrada y cambios en el stock.**
  <img width="956" height="245" alt="STOCK DESPUES DE PEDIDO" src="https://github.com/user-attachments/assets/6764147e-3fde-48e6-bbb0-9266526ed03f" />
-**Factura de Proveedor Generación, validación y registro del pago de la factura de compra, cerrando el ciclo de deuda con el proveedor.**
-<img width="748" height="695" alt="image" src="https://github.com/user-attachments/assets/9fd7363c-0d88-4121-b90f-99cf8f168b1c" />
+ <img width="948" height="270" alt="image" src="https://github.com/user-attachments/assets/353a4896-b301-4316-90f8-f3b403a5c778" />
+ <img width="959" height="403" alt="image" src="https://github.com/user-attachments/assets/eefc1929-4f69-4912-b75f-7d424a8e764a" />
+ <img width="959" height="407" alt="image" src="https://github.com/user-attachments/assets/b6cc3fbc-8f35-4f75-8686-c8c05a0b6568" />
+
+---
+ 
+- **Factura de Proveedor Generación, validación y registro del pago de la factura de compra, cerrando el ciclo de deuda con el proveedor.**
+<img width="425" height="345" alt="image" src="https://github.com/user-attachments/assets/e9298e6d-06f0-4298-86eb-878907cb127a" />
+<img width="247" height="350" alt="image" src="https://github.com/user-attachments/assets/5039942d-3714-4c1c-858c-e7fbe6e5c3c4" />
+
+
+---
 
 ## 7. Ingeniería de Producto y Fabricación (MRP)
+
+>[!NOTE]
 > **Se configuró la lógica de producción para automatizar el ensamblaje bajo demanda:**
-* **Listas de Materiales (BoM):Definición de la estructura del producto "PC Gaming Bestia", con sus componentes (CPU, GPU, Torre) como necesarios.**
+
+* **Listas de Materiales (BoM): Definición de la estructura del producto "PC Gaming Bestia", con sus componentes (CPU, GPU, Torre) como necesarios.**
 * **Orden de Producción:Ejecución de pruebas de fabricación donde el sistema descuenta automáticamente el stock de componentes y realiza el alta del producto terminado en el inventario.**
 <img width="476" height="454" alt="ORDEN DE FABRICACION" src="https://github.com/user-attachments/assets/ec80064f-b69d-4162-a094-3fd12e51f7cf" />
 
+---
 
 ## 8. FLUJO E ECOMMERCE 🟪
-**Implementación del ciclo completo de venta desde el escaparate digital hasta el cobro:**
-* **Publicación Web:Despliegue del producto en el *eCommerce* de Odoo, configurando estados de publicación y banners.**
+
+>[!NOTE]
+>**Implementación del ciclo completo de venta desde el escaparate digital hasta el cobro:**
+
+* **Publicación Web: Despliegue del producto en el *eCommerce* de Odoo, configurando estados de publicación y banners.**
   
 <img width="470" height="242" alt="ORDENADOR PUBLICADO EN TIENDA" src="https://github.com/user-attachments/assets/8198c3f0-525e-40d3-b04b-bdaac63ab075" />
+
+---
 
 * **Gestión de Pedidos (SO):Trazabilidad completa desde la confirmación del pedido en la web hasta el backend administrativo.**
 
@@ -195,22 +242,32 @@ class Producto(models.Model):
 
 <img width="474" height="393" alt="PEDIDO DEL ORDENADOR NO PAGADO" src="https://github.com/user-attachments/assets/6aa71754-938d-4ce0-8520-acfcd7036f58" />
 
+<img width="959" height="175" alt="image" src="https://github.com/user-attachments/assets/dda70650-d1c3-41a9-9547-0872e3939449" />
 
+---
 
 * **Logística de Salida: Validación del Albarán de Entrega (*Delivery Order*), descontando el stock final del almacén.**
 
 <img width="475" height="314" alt="ENTREGA PRODUCTO VALIDAD" src="https://github.com/user-attachments/assets/44d03594-1183-4308-92b3-2b550b2def49" />
 
+<img width="247" height="350" alt="image" src="https://github.com/user-attachments/assets/0c59906a-3faf-4f0d-b6b0-686a97e920f6" />
+
 
 ## 9. GESTIÓN Y CIERRE CONTABLE 🟪
-**Configuración de la capa contable para asegurar la integridad de los datos financieros:**
+
+>[!NOTE]
+>**Configuración de la capa contable para asegurar la integridad de los datos financieros:**
+
 * **Datos Corporativos: Personalización de la compañía para la emisión de documentos.**
 * **Facturación de Cliente: Emisión y validación de facturas desde los pedidos de venta.**
-* **Conciliación de Pagos:Registro de los flujos de caja y cambio de estado a PAGADO mediante los diarios de banco/efectivo.**
+* **Conciliación de Pagos: Registro de los flujos de caja y cambio de estado a PAGADO mediante los diarios de banco/efectivo.**
+  
+<img width="958" height="368" alt="image" src="https://github.com/user-attachments/assets/c1f454f3-6862-4ec3-a7ab-75b548e8fac4" />
 
 ## 10. INFORME 🟪
-> **Se ha desarrollado un informe que mmuestre todas las características creadas en los productos de Vigotech**
 
+>[!NOTE]
+> **Se ha desarrollado un informe que mmuestre todas las características creadas en los productos de Vigotech**
 
 **Mediante los campos creados anteriormenete se desarrolla un informe que contiene toda la información lista para mostrarle el producto al cliente. Se accede a este informe
 propio mediante el icono del engranaje al lado del producto.**
@@ -221,7 +278,10 @@ propio mediante el icono del engranaje al lado del producto.**
 
 
 ## 11. INTEGRACIÓN Y AUTOMATIZACIÓN EXTERNA (BONUSSS) 🟪
+
+>[!NOTE]
 > **A mayores, se diseño un desarrollo que permite la conectividad mediante API externa de Odoo**
+
 * **Script XML-RPC: Desarrollo de un script en **Python** que se conecta al ERP mediante protocolo XML-RPC.**
 * **Funcionalidad:El script audita la base de datos remotamente para generar alertas de Stock Crítico, identificando productos por debajo del umbral de seguridad sin necesidad de acceder a la interfaz web.**
 
@@ -279,5 +339,7 @@ else:
 
 
 ```
+
+<img width="495" height="175" alt="image" src="https://github.com/user-attachments/assets/86872820-c38a-4288-a27d-07c028d327cc" />
 
 ---
