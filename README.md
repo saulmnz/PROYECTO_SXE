@@ -144,7 +144,7 @@ class Producto(models.Model):
 
 ---
 
-## 5. INVENTARIO Y DATOS MAESTROS
+## 5. INVENTARIO Y DATOS MAESTROS 🟪
 
 >[!NOTE]
 > **Se definieron categorías para organizar el flujo de materiales y la valoración de inventario:**
@@ -205,7 +205,7 @@ class Producto(models.Model):
 
 ---
 
-## 7. Ingeniería de Producto y Fabricación (MRP)
+## 7. Ingeniería de Producto y Fabricación (MRP) 🟪
 
 >[!NOTE]
 > **Se configuró la lógica de producción para automatizar el ensamblaje bajo demanda:**
