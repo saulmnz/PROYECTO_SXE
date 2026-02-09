@@ -267,7 +267,7 @@ class Producto(models.Model):
 * **Conciliación de Pagos: Registro de los flujos de caja y cambio de estado a PAGADO mediante los diarios de banco/efectivo.**
   
 <img width="958" height="368" alt="image" src="https://github.com/user-attachments/assets/c1f454f3-6862-4ec3-a7ab-75b548e8fac4" />
-<img width="244" height="350" alt="image" src="https://github.com/user-attachments/assets/27664697-486b-4c07-aee3-ff0da9cc99ed" />
+<img width="444" height="550" alt="image" src="https://github.com/user-attachments/assets/27664697-486b-4c07-aee3-ff0da9cc99ed" />
 
 
 ## 10. INFORME 🟪
@@ -279,7 +279,7 @@ class Producto(models.Model):
 propio mediante el icono del engranaje al lado del producto.**
 
 <img width="769" height="319" alt="image" src="https://github.com/user-attachments/assets/3af363dc-e2ca-4ca3-b6ea-4f5d2899951f" />
-<img width="700" height="627" alt="image" src="https://github.com/user-attachments/assets/9640ddba-cad0-4137-819b-0188be40e631" />
+<img width="400" height="627" alt="image" src="https://github.com/user-attachments/assets/9640ddba-cad0-4137-819b-0188be40e631" />
 
 
 
