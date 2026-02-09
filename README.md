@@ -1,26 +1,120 @@
-# 🚀 PROYECTO SXE: Implantación ERP para "Vigo-Tech Solutions"
+# PROYECTO SXE 💜💜
 
-**Autores:** [Vuestros Nombres]  
-**Curso:** Desarrollo de Aplicaciones Multiplataforma (DAM)  
-**Módulo:** Sistemas de Gestión Empresarial  
+***AUTORES: Saúl Álvarez, Adrián Miguez, Sofía Otero***
+***MÓDULO: SISTEMAS DE XESTIÓN EMPRESARIAL***
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d7a82761-ad58-4c8e-baff-d130a5c27594" />
 
 ---
 
-## 1. Introducción y Objetivo
-El objetivo de este proyecto ha sido la transformación digital de la empresa **"Vigo-Tech Solutions"**, migrando su modelo de negocio físico a una arquitectura 100% Online mediante la implantación del ERP Odoo. El proyecto abarca desde la configuración de infraestructura hasta la automatización de procesos de negocio complejos (MRP, eCommerce y Contabilidad).
+## 1. INTRODUCCIÓN Y OBJETIVO 🟪
 
-## 2. Configuración de Infraestructura y Arquitectura
-El proyecto inició con el establecimiento de un entorno de desarrollo robusto y escalable:
-* **Contenerización:** Despliegue de la arquitectura mediante **Docker** y **Docker Compose** para asegurar la paridad entre entornos de desarrollo y producción.
-* **Bootstrapping del Módulo:** Creación de un módulo personalizado de Odoo (`scaffold`) para alojar las personalizaciones y datos maestros.
-* **Herencia de Modelos:** Se aplicó herencia técnica sobre el modelo `product.template` para extender las funcionalidades nativas del catálogo de productos y adaptarlas al sector hardware.
+>[!NOTE]
+>***El objetivo de este proyecto ha sido la transformación digital de la empresa "Vigo-Tech Solutions", migrando su modelo de negocio físico a una arquitectura online mediante la implantación del ERP Odoo. El proyecto abarca desde la configuración de infraestructura hasta la automatización de procesos de negocio complejos (MRP, eCommerce y Contabilidad).***
 
-## 3. Ecosistema de Módulos
-Se realizó la instalación y orquestación de la suite de aplicaciones necesaria para el flujo empresarial:
-* **Website & eCommerce:** Gestión de interfaz comercial (Front-end) y catálogo digital.
-* **Inventario & Compras:** Control de stock, reglas de abastecimiento y flujo de suministros.
-* **Manufacturing (MRP):** Motor de producción para el ensamblaje de equipos a medida.
-* **Facturación y Contabilidad:** Registro contable de las operaciones, impuestos y tesorería.
+## 2. CONFIGURACIÓN DE INFRAESTRUCTURA 🟪
+
+>**El proyecto inició con el establecimiento de un entorno de desarrollo robusto y escalable:**
+
+- **Contenerización: Despliegue de la arquitectura mediante Docker Compose.**
+
+```yaml
+services:
+  db:
+    image: postgres:17
+    container_name: vigo_tech_db
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=odoo
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  web:
+    image: odoo:18.0
+    container_name: vigo_tech_app
+    depends_on:
+      - db
+    ports:
+      - "8069:8069"
+    environment:
+      - HOST=db
+      - USER=odoo
+      - PASSWORD=odoo
+      - ODOO_MASTER_PASSWD=odoo
+      - ADDONS_PATH=/mnt/extra-addons,/etc/odoo/addons
+    volumes:
+      - web_data:/var/lib/odoo
+      - ./addons:/mnt/extra-addons
+    restart: unless-stopped
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: vigo_tech_pgadmin
+    depends_on:
+      - db
+    ports:
+      - "5050:80"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@example.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    restart: unless-stopped
+volumes:
+  postgres_data:
+  web_data:
+  pgadmin_data:
+```
+
+- **Módulo: Creación de un módulo personalizado de Odoo (`scaffold`) para alojar las personalizaciones y datos maestros.**
+- **Herencia de Modelos: Se aplicó herencia técnica sobre el modelo `product.template` para extender las funcionalidades nativas del catálogo de productos y adaptarlas al sector hardware de la empresa.**
+
+```Python
+from odoo import models, fields
+
+class Producto(models.Model):
+    # AQUÍ LE HEREDO EL MODELO DE LOS PRODUCTOS
+    _inherit = 'product.template' 
+
+    # CAMPO DE SELECCIÓN DE COMPONENTES
+    vigotech_component_type = fields.Selection([
+        ('cpu', 'Procesador (CPU)'),
+        ('gpu', 'Tarjeta Gráfica (GPU)'),
+        ('ram', 'Memoria RAM'),
+        ('motherboard', 'Placa Base'),
+        ('storage', 'Almacenamiento (SSD/HDD)'),
+        ('case', 'Torre/Caja'),
+        ('psu', 'Fuente de Alimentación'),
+        ('peripheral', 'Periférico'),
+        ('other', 'Otros')
+    ], string='Tipo de Componente (Vigo-Tech)', help='Categoría técnica para ensamblaje')
+
+    # CAMPO PARA GARANTÍASSS
+    vigotech_warranty_months = fields.Integer(
+        string='Garantía (Meses)', 
+        default=36,
+        help='Meses de garantía ofrecidos por el fabricante'
+    )
+    
+    vigotech_tech_specs = fields.Text(
+        string='Especificaciones Técnicas Detalladas'
+    )
+```
+
+
+
+## 3. ECOSISTEMA DE MÓDULOS 🟪
+
+> **Se realizó la instalación y orquestación de la suite de aplicaciones necesaria para el flujo empresarial:**
+
+- **Website & eCommerce: Gestión de interfaz comercial y catálogo digital.**
+- **Inventario & Compras: Control de stock, reglas de abastecimiento y flujo de suministros.**
+- **Manufacturing (MRP): Motor de producción para el ensamblaje de equipos a medida. (PC BESTIAAA)**
+- **Facturación y Contabilidad: Registro contable de las operaciones, impuestos y tesorería.**
+
+
 
 ## 4. Gestión del Proyecto (Backlog)
 Se definieron los backlogs iniciales para priorizar las tareas de desarrollo y configuración, asegurando una implementación organizada de los requisitos funcionales (Sprints de configuración).
