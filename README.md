@@ -1,4 +1,4 @@
-# PROYECTO SXE 💜💜
+# PROYECTO SXE 💜
 
 ***AUTORES: Saúl Álvarez, Adrián Miguez, Sofía Otero***
 
