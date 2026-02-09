@@ -148,13 +148,17 @@ class Producto(models.Model):
 
 >[!NOTE]
 > **Se definieron categorías para organizar el flujo de materiales y la valoración de inventario:**
+<img width="959" height="265" alt="CATEGORIA" src="https://github.com/user-attachments/assets/282a31b1-410f-40ef-ba64-1b798750a55c" />
+
+
+---
+
 * **Componentes: Materias primas para el proceso de ensamblaje.**
 <img width="1136" height="162" alt="image" src="https://github.com/user-attachments/assets/c5b00a27-2851-40a8-8897-4f0b2765f7e2" />
 
-* **PCs Ensamblados: Productos terminados destinados a la venta final.**
-  
-<img width="959" height="265" alt="CATEGORIA" src="https://github.com/user-attachments/assets/282a31b1-410f-40ef-ba64-1b798750a55c" />
+---
 
+* **PCs Ensamblados: Productos terminados destinados a la venta final.**
 <img width="959" height="265" alt="image" src="https://github.com/user-attachments/assets/84f7902c-7c06-441b-95ca-ecd51ce3a695" />
 
 ---
@@ -275,7 +279,7 @@ class Producto(models.Model):
 propio mediante el icono del engranaje al lado del producto.**
 
 <img width="769" height="319" alt="image" src="https://github.com/user-attachments/assets/3af363dc-e2ca-4ca3-b6ea-4f5d2899951f" />
-<img width="455" height="627" alt="image" src="https://github.com/user-attachments/assets/9640ddba-cad0-4137-819b-0188be40e631" />
+<img width="700" height="627" alt="image" src="https://github.com/user-attachments/assets/9640ddba-cad0-4137-819b-0188be40e631" />
 
 
 
