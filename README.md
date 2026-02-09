@@ -119,18 +119,21 @@ class Producto(models.Model):
 
 ## 4. GESTIÓN DE PROYECTO 🟪
 > **Se definieron los backlogs iniciales para priorizar las tareas de desarrollo y configuración :**
+<img width="1550" height="768" alt="image" src="https://github.com/user-attachments/assets/0343e6b8-4ee7-4164-99c8-b01f7b1126e6" />
+
+<img width="1086" height="820" alt="image" src="https://github.com/user-attachments/assets/72f6feb6-96b1-482f-a3e6-d8f0b7df6d5d" />
 
 **Con la intención de tener una implementación ordenada y limpia de los reqiuisitos funcionales**
 
+
+
 ## 5. INVENTARIO Y DATOS MAESTROS
-### Estructura de Categorías
 > **Se definieron categorías para organizar el flujo de materiales y la valoración de inventario:**
 * **Componentes:** Materias primas para el proceso de ensamblaje.
 * **PCs Ensamblados:** Productos terminados destinados a la venta final.
   
 <img width="959" height="265" alt="CATEGORIA" src="https://github.com/user-attachments/assets/282a31b1-410f-40ef-ba64-1b798750a55c" />
 
-### Catálogo y Variantes
 > **Se crearon los siguientes requisitos a validar:**
 * **Materias Primas:** Procesador (CPU), Tarjeta Gráfica (GPU) y Torre.
  
