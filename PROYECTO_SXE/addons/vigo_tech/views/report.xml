@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="action_report_vigotech_specs" model="ir.actions.report">
+            <field name="name">FICHA TÉCNICA VIGO TECH</field>
+            <field name="model">product.template</field>
+            <field name="report_type">qweb-pdf</field>
+            
+            <field name="report_name">vigo_tech.report_vigotech_template_view</field>
+            <field name="report_file">vigo_tech.report_vigotech_template_view</field>
+            
+            <field name="binding_model_id" ref="product.model_product_template"/>
+            <field name="binding_type">report</field>
+        </record>
+
+        <template id="report_vigotech_template_view">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            
+                            <div class="row mb-4">
+                                <div class="col-8">
+                                    <h1 style="color: #2c3e50;"><span t-field="doc.name"/></h1>
+                                    <h4 style="color: #7f8c8d;">REFERENCIA: <span t-field="doc.default_code"/></h4>
+                                </div>
+                                <div class="col-4 text-end">
+                                    <div style="border: 2px solid #2c3e50; padding: 10px; border-radius: 5px; text-align: center;">
+                                        <strong>PRECIO</strong><br/>
+                                        <span style="font-size: 20px;" t-field="doc.list_price" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="background-color: #ecf0f1; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+                                <h3 style="border-bottom: 2px solid #34495e; padding-bottom: 5px;">ESPECIFICACIONES VIGO-TECH</h3>
+                                <div class="row mt-3">
+                                    <div class="col-6">
+                                        <strong>TIPO DE COMPONENTE:</strong><br/>
+                                        <span t-field="doc.vigotech_component_type" style="font-size: 16px;"/>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>GARANTÍA OFICIAL:</strong><br/>
+                                        <span t-field="doc.vigotech_warranty_months" style="font-weight: bold; font-size: 16px;"/> MESES
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div t-if="doc.vigotech_tech_specs" class="mt-4">
+                                <h4>DETALLES TÉCNICOS COMPLETOS</h4>
+                                <div style="border: 1px solid #bdc3c7; padding: 15px; font-style: italic;">
+                                    <p t-field="doc.vigotech_tech_specs"/>
+                                </div>
+                            </div>
+
+                            <div class="text-center mt-5" style="border-top: 1px solid #eee; padding-top: 10px; color: #7f8c8d;">
+                                <small>DOCUMENTO GENERADO POR VIGO TECH SOLUTIONS KAWAI | COMPRANOS MÁS CHATARRA</small>
+                            </div>
+
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>
