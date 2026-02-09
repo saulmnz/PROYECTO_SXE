@@ -122,7 +122,7 @@ class Producto(models.Model):
 
 **Con la intención de tener una implementación ordenada y limpia de los reqiuisitos funcionales**
 
-## 5. IVENTARIO Y DATOS MAESTROS
+## 5. INVENTARIO Y DATOS MAESTROS
 ### Estructura de Categorías
 > **Se definieron categorías para organizar el flujo de materiales y la valoración de inventario:**
 * **Componentes:** Materias primas para el proceso de ensamblaje.
@@ -168,9 +168,12 @@ Implementación del ciclo completo de venta desde el escaparate digital hasta el
 
 <img width="477" height="316" alt="COMPRAR FINALIZAR ORDENADOR" src="https://github.com/user-attachments/assets/f37ec4fe-448c-4bd3-ab38-fa161f6bfe7d" />
 
+
 <img width="474" height="329" alt="FINALIZAR COMPRA" src="https://github.com/user-attachments/assets/c111573b-093f-45a4-b4e5-2100479f08fe" />
 
+
 <img width="479" height="270" alt="PEDIDO DE COMPRA" src="https://github.com/user-attachments/assets/daf589ec-5090-4c33-86b4-ab74f22c9376" />
+
 
 <img width="474" height="393" alt="PEDIDO DEL ORDENADOR NO PAGADO" src="https://github.com/user-attachments/assets/6aa71754-938d-4ce0-8520-acfcd7036f58" />
 
